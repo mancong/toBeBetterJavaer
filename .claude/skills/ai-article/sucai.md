@@ -1,5 +1,7 @@
 标题：无限期免费，Token 随便用，舒服啊！
 
+甲方要求：https://my.feishu.cn/docx/LvAdd17ozo3Jw8xdlDacaviwnuf
+
 6 月 1 日，Agnes AI 宣布无限期免费开放旗下核心全模态模型 API。
 
 访问https://platform.agnes-ai.com，注册登录后，在控制台里就创建并复制好 API Key：
