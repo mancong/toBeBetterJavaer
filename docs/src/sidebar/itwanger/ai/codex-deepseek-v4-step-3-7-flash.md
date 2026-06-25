@@ -1,5 +1,5 @@
 ---
-title: 刚刚！Codex官方发声：Codex原生支持其他模型。
+title: Codex原生支持国产模型了，接入Step 3.7 Flash、DeepSeek V4 Flash做个横评
 shortTitle: Codex多模型横评实测
 description: Codex原生支持第三方模型，实测DeepSeek V4 Flash与Step 3.7 Flash在Coding Agent、Search Agent、Tool-use Agent三个场景的表现，对比速度、成本和稳定性。
 keywords:
@@ -20,7 +20,7 @@ date: 2026-06-22
 
 这不。Codex 负责人 Tibo 发话了，Codex、以及 CLI 和 SDK 原生支持任何开源模型了，不限于 GPT-5.5。
 
-![](https://cdn.paicoding.com/stutymore/sucai-20260622160134.png)
+![做封面图](https://cdn.paicoding.com/stutymore/sucai-20260622160134.png)
 
 这对我们国内用户是大大的利好啊。
 
