@@ -1,7 +1,7 @@
 ---
 title: 深入理解Claude Code：CLAUDE.md、Hooks、Skills、Subagents
 shortTitle: Claude Code核心概念拆解
-description: 从官方文档出发，拆解 Claude Code 五大核心概念：上下文、CLAUDE.md、Hooks、Skills、Subagents 的内部机制，结合 PaiCLI 实战对照，理解 Agent Harness 的设计逻辑。
+description: 从官方文档出发，拆解 Claude Code 五大核心概念：上下文、CLAUDE.md、Hooks、Skills、Subagents 的内部机制，结合 PaiCLI 实战对照，理解 Agent Harness 的设计逻辑。面试官：“你说你用Claude写代码，那你说说你CLAUDE.md、Hooks、Skills、Subagents”，我：“这些是啥？”，面试官：“回去等通知吧！”
 keywords:
   - Claude Code
   - CLAUDE.md

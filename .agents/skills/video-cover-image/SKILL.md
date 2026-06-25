@@ -10,7 +10,7 @@ description: Generate paired vertical and horizontal short-video cover images fr
 Create a matched cover pair for one technical short-video script:
 
 - Vertical cover: `3:4`, for 小红书、抖音、快手 and mobile feeds.
-- Horizontal cover: `16:9`, for B站 and video thumbnails.
+- Horizontal cover: `4:3`, for B站 and video thumbnails.
 
 Use the `itwanger-image` style rules when available. Keep prompt context isolated: use only the target script, user-provided reference images, and this skill's rules. Do not pull in unrelated browser/editor/window/history content.
 
@@ -40,7 +40,7 @@ Use the `itwanger-image` style rules when available. Keep prompt context isolate
    - Apply the default high-impact blue-sky knowledge-cover style.
 
 5. Generate the horizontal cover with `image_gen`.
-   - Ratio: `16:9`, target size similar to `1672 x 941` or `1920 x 1080`.
+   - Ratio: `4:3`, target size similar to `1440 x 1080` or `1600 x 1200`.
    - Composition: left icon, center/right presenter, right or top punch lines.
    - Reuse the same title, punch lines, icon, character, color system, and topic framing as the vertical cover.
 
@@ -89,7 +89,7 @@ Vertical prompt outline:
 Horizontal prompt outline:
 
 ```text
-生成一张横版中文短视频封面图，比例 16:9，适合B站横版视频封面。
+生成一张横版中文短视频封面图，比例 4:3，适合B站横版视频封面。
 主题来自口播稿：{topic}
 核心关键词：{keywords}
 画面风格：延续竖版同一套风格，明亮蓝色天空和云层背景，速度线和放射光效。
