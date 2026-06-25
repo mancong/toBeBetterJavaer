@@ -1,7 +1,28 @@
 import { hopeTheme } from "vuepress-theme-hope";
+import { readFileSync, existsSync } from "node:fs";
+import { resolve } from "node:path";
 
 import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
+
+// paicoding 上已存在文章的清单（build 前由 scripts/gen-paicoding-canonical.mjs 自动生成）。
+// 命中的文章把 canonical 让给首发的 paicoding；清单缺失时安全降级为全部自指 javabetter。
+function loadPaicodingCanonical(): Record<string, string> {
+  const candidates = [
+    resolve(process.cwd(), "src/.vuepress/paicoding-canonical.json"),
+    resolve(process.cwd(), "docs/src/.vuepress/paicoding-canonical.json"),
+    resolve(process.cwd(), ".vuepress/paicoding-canonical.json"),
+  ];
+  for (const p of candidates) {
+    try {
+      if (existsSync(p)) return JSON.parse(readFileSync(p, "utf-8"));
+    } catch {
+      /* ignore */
+    }
+  }
+  return {};
+}
+const paicodingCanonical = loadPaicodingCanonical();
 
 export default hopeTheme({
   hostname: "https://javabetter.cn",
@@ -107,7 +128,23 @@ export default hopeTheme({
     },
 
     seo: {
-      canonical: "https://javabetter.cn",
+      // canonical 归属策略（同篇内容双发到 paicoding + javabetter，正主统一定为首发的 paicoding）：
+      //  1) 自动清单命中（build 前脚本探测 paicoding 上文件名=slug 的文章）→ 让权 paicoding，
+      //     新发文章无需任何手动标记；
+      //  2) frontmatter 覆盖：paicoding 上 slug 与文件名不一致的老文章（如重构前 /article/detail/{id}）
+      //     可写 `paicoding: article/detail/2613600021233664` 显式指定；
+      //  3) 其余（仅本站独有的内容等）一律自指 javabetter。
+      canonical: (page) => {
+        const override = (page.frontmatter || {}).paicoding as boolean | string | undefined;
+        if (override) {
+          const path = typeof override === "string" ? override : page.slug;
+          return `https://paicoding.com/${String(path).replace(/^\//, "")}`;
+        }
+        if (page.slug && paicodingCanonical[page.slug]) {
+          return paicodingCanonical[page.slug];
+        }
+        return `https://javabetter.cn${page.path}`;
+      },
     },
 
     // 此处开启了很多功能用于演示，你应仅保留用到的功能。
