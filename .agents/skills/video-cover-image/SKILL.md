@@ -12,6 +12,8 @@ Create a matched cover pair for one technical short-video script:
 - Vertical cover: `3:4`, for 小红书、抖音、快手 and mobile feeds.
 - Horizontal cover: `4:3`, for B站 and video thumbnails.
 
+By default, generate both covers as a pair. Generate only one ratio when the user explicitly says only/只要/单独生成 one specific ratio.
+
 Use the `itwanger-image` style rules when available. Keep prompt context isolated: use only the target script, user-provided reference images, and this skill's rules. Do not pull in unrelated browser/editor/window/history content.
 
 ## Workflow
@@ -28,6 +30,7 @@ Use the `itwanger-image` style rules when available. Keep prompt context isolate
    - Two big punch lines: 2-6 Chinese characters each if possible.
    - Small tag: one short promise or rule of thumb.
    - Visual metaphor: one simple icon or scene, such as Agent flow, checklist, tool call, loop, search, or error trap.
+   - Presenter expression: match the topic while keeping the same 二哥 character. Use confident/focused for architecture and collaboration, serious/alert for pitfalls and bugs, excited/energetic for tutorials and capability reveals, and skeptical/surprised for wrong-answer interview hooks.
 
 3. Keep text short enough for image generation.
    - Prefer 3-5 visible text blocks total.
@@ -64,6 +67,7 @@ Use the `itwanger-image` style rules when available. Keep prompt context isolate
 - Large yellow Chinese punch lines with black outline.
 - One glowing white rounded square icon with a blue/purple technical symbol.
 - 二哥 cartoon presenter: Q-version big head, short hair, glasses, yellow shirt, dark tie, holding a pointer or laptop.
+- Presenter expression changes with the topic, but the character identity stays fixed; avoid exaggerated meme faces, angry faces, horror expressions, or changing the presenter into a different person.
 - Knowledge-zone feel: normal, clean, platform-ready, not neon cyberpunk, not overly AI-looking.
 
 ## Prompt Pattern
@@ -77,7 +81,7 @@ Vertical prompt outline:
 主题来自口播稿：{topic}
 核心关键词：{keywords}
 画面风格：高冲击中文知识封面，明亮蓝色天空和云层背景，速度线和光效，厚重立体字。
-主视觉：二哥卡通讲解员，短发、眼镜、黄色衬衫、深色领带，拿教鞭指向 {visual_icon}。
+主视觉：二哥卡通讲解员，短发、眼镜、黄色衬衫、深色领带，表情根据主题设为 {expression}，拿教鞭指向 {visual_icon}。
 封面文字必须少而大：
 顶部主标题：{main_title}
 中部黄色大字：{punch_line_1}
@@ -93,7 +97,7 @@ Horizontal prompt outline:
 主题来自口播稿：{topic}
 核心关键词：{keywords}
 画面风格：延续竖版同一套风格，明亮蓝色天空和云层背景，速度线和放射光效。
-横版构图：左侧 {visual_icon}，中间偏右二哥卡通讲解员，右侧或顶部放大标题和黄色中文爆点。
+横版构图：左侧 {visual_icon}，中间偏右二哥卡通讲解员，表情根据主题设为 {expression}，右侧或顶部放大标题和黄色中文爆点。
 封面文字必须少而大：
 主标题：{main_title}
 黄色大字：{punch_line_1} / {punch_line_2}
