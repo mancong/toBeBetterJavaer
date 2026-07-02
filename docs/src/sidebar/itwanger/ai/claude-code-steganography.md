@@ -1,5 +1,5 @@
 ---
-title: 我已严肃深扒Claude Code的源码，证明那段针对国内用户的隐写术是真的。
+title: 我已严肃深扒Claude Code的源码，证明那段针对国内用户的代码是真的。
 shortTitle: Claude Code隐写术逆向拆解
 description: 逆向拆解Claude Code内置隐写术机制，从XOR解码域名黑名单到Unicode字符替换，用源码证据还原Anthropic如何通过系统提示词中的日期字符串秘密标记中国用户。
 keywords:
