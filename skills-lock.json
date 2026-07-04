@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "skills": {
+    "zsxq-group": {
+      "source": "unnoo/zsxq-skill",
+      "sourceType": "github",
+      "skillPath": "skills/zsxq-group/SKILL.md",
+      "computedHash": "f5e1a9e0f3f1ae4bfcc236779e701d02183f0d692a239b36a845c2ea59f9bf7a"
+    },
+    "zsxq-note": {
+      "source": "unnoo/zsxq-skill",
+      "sourceType": "github",
+      "skillPath": "skills/zsxq-note/SKILL.md",
+      "computedHash": "9206462f9de196315841cb9b365d04c96567a80a1bd47a98f66394f600a51346"
+    },
+    "zsxq-shared": {
+      "source": "unnoo/zsxq-skill",
+      "sourceType": "github",
+      "skillPath": "skills/zsxq-shared/SKILL.md",
+      "computedHash": "fe10fb6380c9ec317262329665f56b71b034a12a4e6e49b057e7a5d40c247ee6"
+    },
+    "zsxq-topic": {
+      "source": "unnoo/zsxq-skill",
+      "sourceType": "github",
+      "skillPath": "skills/zsxq-topic/SKILL.md",
+      "computedHash": "ba78889e043cde101d2743c19ff1c02ed6c0348cbf18d73e6c96b20f76afa3b3"
+    },
+    "zsxq-user": {
+      "source": "unnoo/zsxq-skill",
+      "sourceType": "github",
+      "skillPath": "skills/zsxq-user/SKILL.md",
+      "computedHash": "e506d5889ad44a4ce528e09fe722bdc563e556f46af49e736f02f7d5fcd7dee2"
+    }
+  }
+}
