@@ -28,7 +28,7 @@ date: 2026-05-20
 
 答案会尽量映射到派聪明、PaiAgent、PaiCLI 的项目真实回答场景，避免纯粹的八股😄。
 
-## 01、Agent 核心机制（18 题）
+## 01、Agent 核心
 
 Agent 是这轮 AI 面试的绝对 C 位。
 
@@ -71,25 +71,53 @@ Agent 是能自主决策调用 Tools 的智能体，Workflow 是多个 Agent 或
 
 题目答案：what-is-react.md
 
+技术派：https://paicoding.com/what-is-react
+
 🟡 进阶 | `→ PaiCLI` | 淘天、腾讯、字节、百度
 
-### 5. ReAct、Plan-and-Execute、Reflection 三种范式有什么核心区别？
-ReAct 边想边干，适合探索型任务；Plan-and-Execute 先出完整计划再逐步执行，适合步骤明确的复杂任务；Reflection 在执行后加一轮自我评估和修正。PaiCLI 同时实现了 ReAct 和 Plan-and-Execute，还有编译反馈驱动的 Reflection 机制。
+### 5. ReAct会死循环吗？
+
+题目答案：react-death-loop.md
+
+技术派： https://paicoding.com/react-death-loop
+
+### 5. 什么是 Plan-and-Execute？
+
+ReAct 和 Plan-and-Execute 是两种任务推进范式：ReAct 走 Thought→Action→Observation 循环，适合信息不确定、需要边查边判断的任务；Plan-and-Execute 先做全局规划，再逐步执行和必要时重规划，适合目标明确、步骤较多的复杂任务。
+
+题目答案：plan-and-execute.md
+
+技术派：https://paicoding.com/plan-and-execute
 
 🟡 进阶 | `→ PaiCLI` | 淘天、腾讯
 
-### 6. 复杂任务怎么做拆分？为什么要拆？效果怎么提升的？
-大模型一次性处理复杂任务容易逻辑混乱。拆成子任务后每一步专注一件事，成功率显著提升。
+### 6. 一个 Agent 有哪些核心组件？
 
-🟡 进阶 | `→ PaiCLI` | 字节、阿里
+- 感知：结构化抽取、OCR、HTML 解析、日志解析结合；关键是减少噪声进上下文。
+- 常见实现：CoT、ReAct、Plan-and-Execute、树搜索（LATS）、任务图。
+- 记忆：摘要压缩、引用溯源、记忆冲突解决、权限与隐私。
+- 工具：最小权限、参数校验、错误信息回灌模型。
+- 执行：真正调用工具或触发环境变化，并处理超时、重试、幂等等工程问题。
+- 反思：「列出本次推理的三处风险并修正」。
 
-### 7. 多 Agent 协作有哪些模式？实际踩过什么坑？
-常见的有主从模式、平等协商模式、层级委派模式。
+题目答案：agent-core-components.md
+
+🟢 基础 | `→ PaiCLI` | 字节、阿里
+
+### 7. Multi-Agent 协作是怎么实现的？
+
+题目答案：multi-agent-collaboration.md
+
+技术派： https://paicoding.com/multi-agent-collaboration
 
 🟡 进阶 | `→ PaiCLI` | 字节、阿里云、蚂蚁、小红书
 
-### 8. 单 Agent 和多 Agent 怎么做选型判断？
-一句话：任务能拆成独立子任务就上多 Agent，否则单 Agent 加工具就够了。
+### 8. 说说 Agent 是如何工作的？
+
+- 输入处理：意图识别、指代消解、安全过滤、加载相关记忆与文档。
+- 任务分解：生成子任务列表或决策树。
+- 工具调用：调用外部 API、数据库、搜索引擎、代码执行环境等。
+- 结果处理：收集工具返回结果，进行必要的格式化和验证。
 
 🟡 进阶 | `→ PaiCLI` | 字节、淘天、阿里云
 
