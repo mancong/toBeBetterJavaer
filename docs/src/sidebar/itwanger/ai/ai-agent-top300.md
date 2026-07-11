@@ -166,6 +166,10 @@ ReAct 和 Plan-and-Execute 是两种任务推进范式：ReAct 走 Thought→Act
 
 技术派：https://paicoding.com/what-is-loop-engineering
 
+## 15. 为什么LLM没有记忆？
+
+## 16. 怎么样才能让LLM拥有记忆？
+
 ## 15. 到底是什么是上下文窗口？
 
 ## 16. 怎么让 LLM 返回结构化内容？比如说和Java对象的字段一一对应？
