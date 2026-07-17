@@ -1,6 +1,6 @@
 ---
 title: Claude Code 爽用 Qwen3.6，Token 不限量。
-shortTitle: Claude Code 爽用 Qwen3.6 阿里版Claude Code发布，夯爆了。
+shortTitle: Claude Code 爽用 Qwen3.6 阿里版Claude Code发布，夯爆了。阿里版Claude Code发布，爽用 Qwen3.6。阿里版Claude Code发布，Token 不限量。阿里版Claude Code发布，爽用 Qwen 不限量。
 description: 手把手教你在 Claude Code 中接入讯飞星辰 MaaS 平台的 Qwen3.6 模型，6 折定价加阶梯返利，企业级调用量越多越划算。
 keywords:
   - Claude Code
